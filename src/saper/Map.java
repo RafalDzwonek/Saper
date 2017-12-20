@@ -36,7 +36,7 @@ public class Map {
      * @param n szerokość pola
      * @param m wysokość pola
      */
-    Map(int n, int m) {
+    public Map(int n, int m) {
         map = new char[n + 2][m + 2];
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[i].length; j++) {
