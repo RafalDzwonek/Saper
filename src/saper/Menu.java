@@ -31,6 +31,7 @@ public class Menu {
         System.out.println("Welcome!!!");
 
         do {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("1. Start \n2. Difficulty \n3. Help \n4. Exit");
             Scanner read = new Scanner(System.in);
             menu = read.nextInt();
@@ -44,6 +45,7 @@ public class Menu {
                     break;
                 case 3:
                     Help();
+                    pressAnyKeyToContinue();
                     break;
                 case 4:
                     exit = false;
@@ -70,6 +72,7 @@ public class Menu {
         Map Mapa;
 
         do {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("Choose difficulty:\n1.Easy\n2.Normal\n3.Hard\n4.Coustom");
             Scanner read = new Scanner(System.in);
             diff = read.nextInt();
@@ -100,6 +103,17 @@ public class Menu {
                     break;
             }
         } while (!isDiffSet);
+    }
+
+    /*
+    Funkcja zatrzymująca program dopóki przeciwnik nie naciśnie Enter
+    */
+    public void pressAnyKeyToContinue() {
+        System.out.println("Press Enter key to continue...");
+        try {
+            System.in.read();
+        } catch (Exception e) {
+        }
     }
 
 }
