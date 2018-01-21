@@ -15,16 +15,18 @@ public class Menu {
         /**
         * @param n szerokość pola
         * @param m wysokość pola
+        * @param isDiffSet sprawdza czy poziom trudności został wybrany.
         */
         int n;
         int m;
+        boolean isDiffSet=false;
     /**
      * Metoda odpowiadająca za Menu gry.
      */
     public Menu() {
         int menu;
         System.out.println("Welcome!!!");
-        System.out.println("Type 1 to start, 2 to select difficulty, 3 to  , 4 for help. ");
+        System.out.println("1. Start \n2. Difficulty \n3. Help \n4. Exit");
         Scanner read = new Scanner(System.in);
         menu = read.nextInt();
 
@@ -33,10 +35,9 @@ public class Menu {
                 break;
             case '2': Difficulty();
                 break;
-            case '3':
+            case '3': Help();
                 break;
-            case '4': Help();
-                break;
+            case '4': break;
         }
         
         
@@ -69,6 +70,7 @@ public class Menu {
                     Mapa = new Map(n,m);
                     break;
     }
+        isDiffSet=true;
 }
     
  
