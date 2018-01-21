@@ -10,9 +10,11 @@ import java.util.Scanner;
 /**
  *
  * @author Konrad
+ * 
+ * Klasa zawierająca metodę odpowiadająca za sterowanie w rozpoczętej już grze.
  */
 public class Controls {
-    public void Setup() {
+    public void move(int x, int y) {
         Scanner read = new Scanner(System.in);
         String cord;
         cord = read.next();
