@@ -42,10 +42,10 @@ public class Menu {
         
 
         }
-    public Start(); {
+    public void Start() {
     
 }
-    public  Help(); {
+    public void Help() {
             System.out.println("Help:");
             System.out.println("");
 }
@@ -61,7 +61,12 @@ public class Menu {
                     break;
             case "hard": Mapa = new Map(30,16);
                     break;
-            case "custom": Mapa = new Map(n,m);
+            case "custom": 
+                    System.out.println("Type width of the map: ");
+                    n = read.nextInt();
+                    System.out.println("Type height of the map: ");
+                    m = read.nextInt();
+                    Mapa = new Map(n,m);
                     break;
     }
 }
