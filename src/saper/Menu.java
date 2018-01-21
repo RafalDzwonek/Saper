@@ -85,7 +85,7 @@ public class Menu {
 
         do {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-            System.out.println("Choose difficulty:\n1.Easy\n2.Normal\n3.Hard\n4.Coustom");
+            System.out.println("Choose difficulty:\n1.Easy\n2.Normal\n3.Hard\n4.Custom");
             Scanner read = new Scanner(System.in);
             diff = read.nextInt();
             switch (diff) {

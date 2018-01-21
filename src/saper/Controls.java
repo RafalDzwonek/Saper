@@ -14,11 +14,11 @@ import java.util.Scanner;
  * Klasa zawierająca metodę odpowiadająca za sterowanie w rozpoczętej już grze.
  */
 public class Controls {
-    public void move(int x, int y) {
+    public void move(int n, char m) {
         Scanner read = new Scanner(System.in);
-        String cord;
-        cord = read.next();
-        
-        
+        System.out.println("Enter row number:");
+        n = read.nextInt();
+        System.out.println("Enter column number:");
+        m = read.next().trim().charAt(0);
 }
 }
