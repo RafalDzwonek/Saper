@@ -25,6 +25,7 @@ public class Map {
 
     public char[][] map;
     public int[][] mask;
+    int bombCounter = 0;
 
     /**
      * Standardowy konstruktor klasy Map. Tablica jest powiększona o 2 w każdą
@@ -137,11 +138,12 @@ public class Map {
     public void generateBombs(int chance) {
         Random rand = new Random();
         int rng;
-        for (int i = 2; i < map.length - 1; i++) {
-            for (int j = 2; j < map[i].length - 1; j++) {
+        for (int i = 1; i < map.length - 1; i++) {
+            for (int j = 1; j < map[i].length - 1; j++) {
                 rng = rand.nextInt(101);
                 if (rng <= chance) {
                     map[i][j] = 'x';
+                    bombCounter++;
                 }
             }
         }
@@ -187,5 +189,20 @@ public class Map {
             }
         }
     }
-
+    /*
+    Funkcja sprawdza czy wszystkie pola poza bombami zostały odkryte.
+    True - Wygrana
+    False - Nie wszystkie pola są odkryte
+    */
+    public boolean check() {
+        boolean test = true;
+        for (int i = 1; i < map.length - 1; i++) {
+            for (int j = 1; j < map[i].length - 1; j++) {
+                if(mask[i][j]==0 && map[i][j]!='x')
+                    test = false;
+                }
+            }
+        return test;
+    }
+    
 }
