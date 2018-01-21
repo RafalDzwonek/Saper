@@ -10,6 +10,9 @@ import java.util.Scanner;
 /**
  *
  * @author Konrad
+ * 
+ * Klasa zawierająca metody odpowiadające za konstrukcję menu i możliwość wyboru
+ * poszczególnych opcji w tym menu.
  */
 public class Menu {
 
