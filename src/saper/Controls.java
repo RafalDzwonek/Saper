@@ -5,10 +5,18 @@
  */
 package saper;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Konrad
  */
 public class Controls {
-    
+    public void Setup() {
+        Scanner read = new Scanner(System.in);
+        String cord;
+        cord = read.next();
+        
+        
+}
 }
