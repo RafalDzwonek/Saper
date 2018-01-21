@@ -18,6 +18,7 @@ public class Menu {
      * @param m wysokość pola
      * @param isDiffSet sprawdza czy poziom trudności został wybrany.
      */
+    Map Mapa;
     int n;
     int m;
     boolean isDiffSet = false;
@@ -59,7 +60,16 @@ public class Menu {
     }
 
     public void Start() {
-
+        if (!isDiffSet) {
+            Mapa = new Map(16, 16);
+        }
+        Mapa.generateBombs(25);
+        Mapa.setNumbers();
+        Mapa.setBorders();
+        Mapa.drawMap();
+        do{
+            
+        }while(true);
     }
 
     public void Help() {
@@ -69,7 +79,6 @@ public class Menu {
 
     public void Difficulty() {
         int diff;
-        Map Mapa;
 
         do {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -107,7 +116,7 @@ public class Menu {
 
     /*
     Funkcja zatrzymująca program dopóki przeciwnik nie naciśnie Enter
-    */
+     */
     public void pressAnyKeyToContinue() {
         System.out.println("Press Enter key to continue...");
         try {

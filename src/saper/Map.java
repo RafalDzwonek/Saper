@@ -18,11 +18,8 @@ import java.util.Random;
  * Klasa zawierająca tablice posiadającą mapę i funkcje do zarządzania nią. W
  * klasie znajduje się również maska która określa które elementy mają być
  * wyświetlone.
- * 
- * Wartości maski
- * 0 - ukryte pole
- * 1 - odkryte pole
- * 2 - oznaczone pole
+ *
+ * Wartości maski 0 - ukryte pole 1 - odkryte pole 2 - oznaczone pole
  */
 public class Map {
 
@@ -45,19 +42,17 @@ public class Map {
         }
         mask = new int[n + 2][m + 2];
         for (int i = 0; i < mask[0].length; i++) {
-            mask[0][i]=1;
-            mask[mask.length-1][i]=1;
+            mask[0][i] = 1;
+            mask[mask.length - 1][i] = 1;
         }
-        for (int i = 0; i < mask.length; i++){
-            mask[i][0]=1;
-            mask[i][mask[0].length-1]=1;
+        for (int i = 0; i < mask.length; i++) {
+            mask[i][0] = 1;
+            mask[i][mask[0].length - 1] = 1;
         }
     }
 
-    
     /**
-     * Narzędzie do debugowania.
-     * Wypisuję maskę.
+     * Narzędzie do debugowania. Wypisuję maskę.
      */
     public void debugDrawMask() {
         for (int i = 0; i < mask.length; i++) {
@@ -67,10 +62,9 @@ public class Map {
             }
         }
     }
-    
+
     /**
-     * Narzędzie do debugowania.
-     * Wypisuje mapę bez maski.
+     * Narzędzie do debugowania. Wypisuje mapę bez maski.
      */
     public void debugDrawMap() {
         for (int i = 0; i < map.length; i++) {
@@ -80,17 +74,38 @@ public class Map {
             }
         }
     }
-    
+
     /**
      * Rysuje mapę z nałożoną maską
      */
-    public void drawMap(){
+    public void drawMap() {
+        char letter = 'a';
+        System.out.print(" ");
+        for (int i = 0; i < map.length - 2; i++) {
+            System.out.print(letter);
+            letter++;
+        }
         for (int i = 0; i < map.length; i++) {
             System.out.println("");
+            if (i == 0) {
+                System.out.print("  ");
+            } else if (i < 10) {
+                System.out.print(" " + i);
+            } else if (i < map.length - 1) {
+                System.out.print(i);
+            } else {
+                System.out.print("  ");
+            }
             for (int j = 0; j < map[i].length; j++) {
-                if (mask[i][j]==0) System.out.print(" ");
-                if (mask[i][j]==1) System.out.print(map[i][j]);
-                if (mask[i][j]==2) System.out.print("*");
+                if (mask[i][j] == 0) {
+                    System.out.print(" ");
+                }
+                if (mask[i][j] == 1) {
+                    System.out.print(map[i][j]);
+                }
+                if (mask[i][j] == 2) {
+                    System.out.print("*");
+                }
             }
         }
     }
