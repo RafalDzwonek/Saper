@@ -54,7 +54,7 @@ public class Menu {
         String difficulty;
         Scanner read = new Scanner(System.in);
         difficulty = read.next();
-        Map Mapa = new Map(n,m);
+        Map Mapa;
         switch (difficulty){
             case "easy": Mapa = new Map(8,8);
                     break;
