@@ -114,7 +114,7 @@ public class Menu {
                     isDiffSet = true;
                     break;
                 case 3:
-                    Mapa = new Map(30, 16);
+                    Mapa = new Map(24, 24);
                     isDiffSet = true;
                     break;
                 case 4:
