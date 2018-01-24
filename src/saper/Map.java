@@ -81,7 +81,7 @@ public class Map {
      */
     public void drawMap() {
         char letter = 'a';
-        System.out.print(" ");
+        System.out.print("   ");
         for (int i = 0; i < map.length - 2; i++) {
             System.out.print(letter);
             letter++;
@@ -109,6 +109,7 @@ public class Map {
                 }
             }
         }
+        System.out.println("");
     }
 
     /**

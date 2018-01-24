@@ -63,20 +63,36 @@ public class Menu {
     }
 
     public void Start() {
+        boolean exit;
+        Controls controls = new Controls();
         if (!isDiffSet) {
             Mapa = new Map(16, 16);
         }
-        Mapa.generateBombs(25);
+        Mapa.generateBombs(10);
         Mapa.setNumbers();
         Mapa.setBorders();
-        Mapa.drawMap();
         do{
-            
-        }while(true);
+            Mapa.drawMap();
+            System.out.println("Waiting for input:\n");            
+            exit = controls.move(Mapa);
+            if(Mapa.check()){
+                Mapa.debugDrawMap();
+                System.out.println("Brawo wygrałeś!");
+                pressAnyKeyToContinue();
+            }
+        }while(exit);
     }
 
     public void Help() {
-        System.out.println("Help:");
+        System.out.println("This is game of saper\n"
+                + "If you dont know the rules they are simple.\n"
+                + "You have to reveal every point on map.\n"
+                + "However there are bombs on map, if you reveal bomb, you lose.\n"
+                + "Numbers on map tells you how many bomb are surrounding this cell.\n"
+                + "To reveal cell type \"o <horizontal index> <vertical index>\"\n"
+                + "For eg. \"o d 15\"\n"
+                + "You can also mark cell. To mark cell use * instead of \"o\"\n"
+                + "for eg. \"* c 10\"");
         System.out.println("");
     }
 
@@ -126,6 +142,14 @@ public class Menu {
             System.in.read();
         } catch (Exception e) {
         }
+    }
+    
+    
+    /*
+    Prymitywna funkcja do czyszczenia ekranu
+    */
+    public void clearScr(){
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
 
 }
