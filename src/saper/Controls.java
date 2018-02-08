@@ -14,6 +14,13 @@ import java.util.Scanner;
  * Klasa zawierająca metodę odpowiadająca za sterowanie w rozpoczętej już grze.
  */
 public class Controls {
+    
+    /**
+     * Analizuje, sprawdza i wykonuje komendę podaną przez gracza.
+     * 
+     * @param mapa mapa na której toczy się rozgrywka
+     * @return zwraca false jeśli gracz trafi na bombę
+     */
 
     public boolean move(Map mapa) {
         Menu menu = new Menu();
