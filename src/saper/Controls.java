@@ -32,7 +32,7 @@ public class Controls {
                             y = Character.getNumericValue(cord.charAt(4)) * 10 + Character.getNumericValue(cord.charAt(5));
                             if(mapa.map[y][x]=='x'){
                                 mapa.debugDrawMap();
-                                System.out.println("Trafiłeś bombę przegrana!.");
+                                System.out.println("It's a bomb. You lose!");
                                 menu.pressAnyKeyToContinue();
                                 return false;
                             }
@@ -44,7 +44,7 @@ public class Controls {
                         y = Character.getNumericValue(cord.charAt(4));
                         if(mapa.map[y][x]=='x'){
                                 mapa.debugDrawMap();
-                                System.out.println("Trafiłeś bombę przegrana!.");
+                                System.out.println("It's a bomb. You lose!");
                                 menu.pressAnyKeyToContinue();
                                 return false;
                             }
@@ -75,6 +75,9 @@ public class Controls {
                 }
             }
         }
-        return false;
+        System.out.println("Wrong command\n"
+                + "Correct format: <operation> <horizontal index> <vertical index>");
+        menu.pressAnyKeyToContinue();
+        return true;
     }
 }
