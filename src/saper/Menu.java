@@ -77,7 +77,7 @@ public class Menu {
             exit = controls.move(Mapa);
             if(Mapa.check()){
                 Mapa.debugDrawMap();
-                System.out.println("Brawo wygrałeś!");
+                System.out.println("Congratulations. You won!");
                 pressAnyKeyToContinue();
             }
         }while(exit);
